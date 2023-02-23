@@ -1,17 +1,22 @@
 window.onload = function(){
-    fetch('https://swapi.dev/api/people')
+    fetch('https://swapi.dev/api/films')
     .then(async (data) => {
         const response = await data.json()
-        console.log({ response })
+        console.log(response)
 
-        const list = document.getElementById('personage-list')
+        const list = document.getElementById('films-list')
 
-        response.forEach(people => {
-            const personageName = document.createTextNode(people.name)
+        response.forEach((films) => {
+            const filmTitle = document.createTextNode(film.title)
+            const filmCard = document.createElement('div')
+            filmCard.style.backgroundImage = `url${film.image}`
+            filmCard.className = '.film-card'
+            filmCard.appendChild(filmTitle)
+            list.appendChild(filmCard)
         }) 
        }).catch((error) => {
         console.log(error)
-        alert('Erro ao carregar')
+        alert('Erro ao carregar a API')
     })
 } 
 /*
