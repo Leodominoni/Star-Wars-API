@@ -28,7 +28,7 @@ h1{
     align-items: center;
     justify-content: center;
 }
-.films-list{
+.personage-list{
     display: flex;
     flex-direction: row;
 }
